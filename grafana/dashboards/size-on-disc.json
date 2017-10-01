@@ -23,6 +23,7 @@
   "hideControls": false,
   "id": 1,
   "links": [],
+  "refresh": "5s",
   "rows": [
     {
       "collapse": false,
@@ -152,8 +153,9 @@
       {
         "allValue": null,
         "current": {
-          "text": "http://www.delfi.lv",
-          "value": "http://www.delfi.lv"
+          "isNone": true,
+          "text": "None",
+          "value": ""
         },
         "datasource": "influx",
         "hide": 0,
