@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
+#clean-up
+rm -rf output
 #download all content of specified page to disc
 wget -H -k -K -P output -p $1
 #get used disc space in bytes of previously downloaded content
@@ -13,5 +15,3 @@ if [ -n "$2" ]; then
 else
     curl -i -XPOST 'http://influxdb:8086/write?db=testdatadb' --data-binary "site_size,site=$1 value=$size $date"
 fi
-#clean-up
-rm -rf output
