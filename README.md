@@ -31,6 +31,14 @@ docker-compose up -d
 #### See results
 [http://localhost:3000/dashboard/file/size-on-disc.json?refresh=5s&orgId=1](http://localhost:3000/dashboard/file/size-on-disc.json?refresh=5s&orgId=1)
 
+#### See results (Windows OS below Windows 10 Pro/Enterprise using Docker Toolbox)
+Get IP address of VM on which docker engine is running:<br />
+`docker-machine ip`<br />
+Replace localhost in previous link with returned IP address
+
+#### Edit Grafana (dashboards, templating, annotations, configuration, etc)
+Admin credentials: `admin/admin`
+
 #### Debugging
 ##### How to access InfluxDB shell?
 `docker run --rm --network=simplesttestdashboard_default --link=simplesttestdashboard_influxdb_1 -it influxdb:1.3.5 influx --host influxdb`
