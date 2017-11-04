@@ -10,7 +10,9 @@ date=`date +%s%N`
 #write data to influxdb
 #https://docs.influxdata.com/influxdb/v1.3/guides/writing_data/
 #to demonstrate how annotations works we can pass second parameter (optional) to this script
-if [ -n "$2" ]; then
+if [ -n "$4" ]; then
+    curl -i -XPOST 'http://influxdb:8086/write?db=testdatadb' --data-binary "site_size,site=$1 comment=\"$2\",tags=\"$3\",title=\"$4\",value=$size $date"
+elif [ -n "$2" ]; then
     curl -i -XPOST 'http://influxdb:8086/write?db=testdatadb' --data-binary "site_size,site=$1 comment=\"$2\",value=$size $date"
 else
     curl -i -XPOST 'http://influxdb:8086/write?db=testdatadb' --data-binary "site_size,site=$1 value=$size $date"

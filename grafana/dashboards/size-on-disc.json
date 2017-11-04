@@ -8,11 +8,11 @@
         "iconColor": "rgba(255, 96, 96, 1)",
         "limit": 100,
         "name": "comment",
-        "query": "select comment from site_size where site =~ /[[site]]/",
+        "query": "select tags, comment, title from site_size where site =~ /[[site]]/",
         "showIn": 0,
-        "tagsColumn": "",
-        "textColumn": "",
-        "titleColumn": "",
+        "tagsColumn": "tags",
+        "textColumn": "comment",
+        "titleColumn": "title",
         "type": "alert"
       }
     ]

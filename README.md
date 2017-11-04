@@ -26,8 +26,10 @@ docker-compose up -d
 ```
 
 #### Run test
-`docker exec -t simplesttestdashboard_testrunner_1 ./runner.sh http://tapost.org [comment]`
-
+`docker exec -t simplesttestdashboard_testrunner_1 ./runner.sh http://google.lv ["comment" ["comma separated tags" "title"]]`<br />
+######Example
+`docker exec -t simplesttestdashboard_testrunner_1 ./runner.sh http://google.lv "informative comment about run"`<br />
+`docker exec -t simplesttestdashboard_testrunner_1 ./runner.sh http://google.lv "informative comment about run" "test, second" "Annotation in action"`
 #### See results
 [http://localhost:3000/dashboard/file/size-on-disc.json?refresh=5s&orgId=1](http://localhost:3000/dashboard/file/size-on-disc.json?refresh=5s&orgId=1)
 
