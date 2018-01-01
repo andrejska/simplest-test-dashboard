@@ -19,7 +19,7 @@ Please take into account that almost all web servers are using gzip compression,
 [docker-compose](https://docs.docker.com/compose/install/)
 
 #### Start InfluxDB & Grafana
-```
+```bash
 git clone https://github.com/andrejska/simplest-test-dashboard
 cd simplest-test-dashboard
 docker-compose up -d
@@ -27,7 +27,7 @@ docker-compose up -d
 
 #### Run test
 `docker exec -t simplesttestdashboard_testrunner_1 ./runner.sh http://google.lv ["comment" ["comma separated tags" "title"]]`<br />
-######Example
+###### Example
 `docker exec -t simplesttestdashboard_testrunner_1 ./runner.sh http://google.lv "informative comment about run"`<br />
 `docker exec -t simplesttestdashboard_testrunner_1 ./runner.sh http://google.lv "informative comment about run" "test, second" "Annotation in action"`
 #### See results
