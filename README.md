@@ -26,7 +26,7 @@ docker-compose up -d
 ```
 
 #### Run test
-`docker exec -t simplesttestdashboard_testrunner_1 ./runner.sh http://google.lv ["comment" ["comma separated tags" "title"]]`<br />
+`docker exec -t simplesttestdashboard_testrunner_1 ./runner.sh http://host/endpoint ["comment" ["comma separated tags" "title"]]`<br />
 ###### Example
 `docker exec -t simplesttestdashboard_testrunner_1 ./runner.sh http://google.lv "informative comment about run"`<br />
 `docker exec -t simplesttestdashboard_testrunner_1 ./runner.sh http://google.lv "informative comment about run" "test, second" "Annotation in action"`
@@ -37,9 +37,6 @@ docker-compose up -d
 Get IP address of VM on which docker engine is running:<br />
 `docker-machine ip`<br />
 Replace localhost in previous link with returned IP address
-
-#### Edit Grafana (dashboards, templating, annotations, configuration, etc)
-Admin credentials: `admin/admin`
 
 #### Debugging
 ##### How to access InfluxDB shell?
