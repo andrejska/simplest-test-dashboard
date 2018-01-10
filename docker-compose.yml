@@ -14,7 +14,7 @@ services:
       - "./grafana/dashboards/:/var/lib/grafana/dashboards"
     environment:
       - GF_AUTH_ANONYMOUS_ENABLED=true
-      - GF_AUTH_ANONYMOUS_ORG_ROLE=admin
+      - GF_AUTH_ANONYMOUS_ORG_ROLE=Admin
       - GF_DASHBOARDS_JSON_ENABLED=true
   testrunner:
     build: ./testrunner
