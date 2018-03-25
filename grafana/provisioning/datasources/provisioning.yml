@@ -1,0 +1,13 @@
+# http://docs.grafana.org/administration/provisioning/
+apiVersion: 1
+datasources:
+- name: influx
+  type: influxdb
+  access: proxy
+  url: http://influxdb:8086
+  password: admin
+  user: admin
+  database: testdatadb
+  isDefault: true
+  version: 1
+  editable: true

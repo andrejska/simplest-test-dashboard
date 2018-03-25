@@ -26,12 +26,13 @@ docker-compose up -d
 ```
 
 #### Run test
-`docker exec -t simplesttestdashboard_testrunner_1 ./runner.sh http://host/endpoint ["comment" ["comma separated tags" "title"]]`<br />
+`docker exec -t simplesttestdashboard_testrunner_1 ./runner.sh http://host/endpoint ["comment" ["comma separated tags"]]`<br />
 ###### Example
+`docker exec -t simplesttestdashboard_testrunner_1 ./runner.sh http://google.lv`<br />
 `docker exec -t simplesttestdashboard_testrunner_1 ./runner.sh http://google.lv "informative comment about run"`<br />
-`docker exec -t simplesttestdashboard_testrunner_1 ./runner.sh http://google.lv "informative comment about run" "test, second" "Annotation in action"`
+`docker exec -t simplesttestdashboard_testrunner_1 ./runner.sh http://google.lv "informative comment about run" "test, second"`
 #### See results
-[http://localhost:3000/dashboard/file/size-on-disc.json?refresh=5s&orgId=1](http://localhost:3000/dashboard/file/size-on-disc.json?refresh=5s&orgId=1)
+[http://localhost:3000/d/zcy-lIziz](http://localhost:3000/d/zcy-lIziz)
 
 #### See results (Windows OS below Windows 10 Pro/Enterprise using Docker Toolbox)
 Get IP address of VM on which docker engine is running:<br />
@@ -40,17 +41,7 @@ Replace localhost in previous link with returned IP address
 
 #### Debugging
 ##### How to access InfluxDB shell?
-`docker run --rm --network=simplesttestdashboard_default --link=simplesttestdashboard_influxdb_1 -it influxdb:1.3.5 influx --host influxdb`
-
-## What is `grafana/new-entry.sh`?
-To provide fully working out-of-box solution we need to configure InfluxDB as data source for Grafana what is possible only using Grafana API when Grafana server is already running.<br />
-If it would be possible using environment variables, or by copying .conf file as with dashboards then we would not need such a little bit hackish approach.<br />
-https://github.com/grafana/grafana-docker/issues/11 <br />
-https://github.com/grafana/grafana/issues/1789 <br />
-https://github.com/grafana/grafana/issues/5674 <br />
-
-
-Other way would be to use Ansible (or any other similar tool) which looks like a little overkill for this example
+`docker run --rm --network=simplesttestdashboard_default --link=simplesttestdashboard_influxdb_1 -it influxdb:1.4.3 influx --host influxdb`
 
 ## Why test script is in Bash?
 This is to demo that InfluxDB has HTTP API and not to focus on specific high level language 

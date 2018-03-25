@@ -1,17 +1,19 @@
 version: '3'
 services:
   influxdb:
-    image: influxdb:1.4.2
+    image: influxdb:1.4.3
     ports:
       - "8086:8086"
     environment:
       - INFLUXDB_DB=testdatadb
   grafana:
-    build: ./grafana
+    image: grafana/grafana:5.0.3
     ports:
       - "3000:3000"
     volumes:
-      - "./grafana/dashboards/:/var/lib/grafana/dashboards"
+      - "./grafana/provisioning/dashboards:/etc/grafana/provisioning/dashboards"
+      - "./grafana/provisioning/datasources:/etc/grafana/provisioning/datasources"
+      - "./grafana/dashboards:/var/lib/grafana/dashboards"
     environment:
       - GF_AUTH_ANONYMOUS_ENABLED=true
       - GF_AUTH_ANONYMOUS_ORG_ROLE=Admin
